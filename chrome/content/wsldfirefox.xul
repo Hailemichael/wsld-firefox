@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://wsldfirefox/skin/wsldfirefox.css" type="text/css"?>
+
+<overlay id="WSLDFirefox-Overlay"
+xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="application/x-javascript"
+src="chrome://wsldfirefox/content/wsldfirefox.js" />
+
+<script type="application/x-javascript">
+    window.addEventListener("load",   function() { objwsldfirefox.onLoad(); },   false);
+</script>
+
+<toolbox id="navigator-toolbox">
+
+   <toolbar id="WSLDFirefoxToolbar" toolbarname="WSLD Firefox Toolbar" accesskey="T"
+            class="chromeclass-toolbar" iconsize="small" context="toolbar-context-menu"
+            hidden="false" persist="hidden">
+        
+        
+       
+        <toolbaritem id="WSLDFirefoxTitleLogo" flex="0">
+        	<hbox pack="center" align="center" width="110" height='28'>
+        		<toolbarbutton id="Title" type="menu" width="110" height='28' tooltiptext="Title with Help Menu">
+        			
+                    <menupopup>
+                        <menuitem label="About the Extension" oncommand="objwsldfirefox.openAbout();" />
+                        <menuseparator/>          
+                      	<menuitem label="Help" oncommand="objwsldfirefox.openHelp();" />            
+                    </menupopup>
+           		</toolbarbutton>
+            </hbox> 
+        </toolbaritem>
+        
+        <toolbarseparator/>
+        
+        <toolbaritem id="WSLDFirefoxlogo" flex="0">
+            <vbox pack="end" width="125" height="28">
+            	<hbox width="125" height="25" pack="end">
+                	<image id="securityicon" width="25" height="25" tooltiptext="Website Identity Indicator"/>
+                	<label id="organization" />
+                </hbox>
+            </vbox> 
+        </toolbaritem>
+        
+        
+        <toolbaritem id="WSLDFirefoxProgressBar" flex="0">  
+            <vbox width="350" height="28">
+                		  
+           			 <hbox  width="350" height="3" pack="start">
+                		 
+                		 <hbox id="box1" width="192.25" height="3" pack="center" >
+                		 	<label class = "strengthLabel" value="Very Risky" /> 
+           			 	 </hbox>
+           			 	 
+           			 	 <hbox id="box2" width="4" height="3" pack="center" >
+                		 	<image id= "progressarrow1" width = '4' height= '3' src= "chrome://wsldfirefox/skin/arrow-down.png"/> 
+           			 	 </hbox>
+           			 	 
+           			 	 <hbox id="box3" width="53.75" height="3" pack="center" >
+                		 	<label class = "strengthLabel" value="Safe"  /> 
+           			 	 </hbox>
+           			 	 
+           			 	 <hbox id="box4" width="4" height="3" pack="center" >
+                		  	<image id= "progressarrow2" width = '4' height= '3' src= "chrome://wsldfirefox/skin/arrow-down.png"/>
+           			 	 </hbox>
+           			 	 
+           			 	 <hbox id="box5" width="96" height="3" pack="center" >
+                		 	<label class = "strengthLabel" value="Secure"  />
+           			 	 </hbox>
+           			 	  
+           			 </hbox>
+           			 
+           			 <hbox width="350" height='25' pack="end">
+                     	<progressmeter id="WSLDFirefoxProgressmeter" pack="end" class= "progressmeteroriginal" width="320" height='25' value="0" tooltiptext="Security Strength Meter">
+                        
+                        </progressmeter>
+                     </hbox>
+                   	    
+            </vbox>
+            
+            <vbox>
+            	<description value="  "/>
+            	<description id="WSLDFirefoxDescription"/>
+            </vbox>
+            
+        </toolbaritem>  
+        
+        <toolbaritem id="WSLDFirefoxStrengthText" >
+            <hbox pack="center" align="center" width="110" height='28'>
+                <image id="strengthimage" width='100' height='28' tooltiptext="Connection Security Strength" />
+            </hbox> 
+        </toolbaritem>
+        
+        
+        <toolbaritem>
+        	<vbox width="130" height= '28' pack="center">
+        		<toolbarbutton id="WSLDFirefoxViewDetailButton" class="SecurityDetailButton" label="Security Details" width="130" height= '26' tooltiptext="View Detailed Security Info" 
+            					oncommand="objwsldfirefox.veiwSecurityDetails();">
+            				    
+       			</toolbarbutton>
+       		</vbox>
+        </toolbaritem>
+        
+        <spacer flex="2" />
+        
+        <toolbarseparator/>
+        
+        <toolbaritem id="WSLDFirefoxTrustmarks" flex="0">
+        	
+        	<hbox id= "Trustmarkbox" width='200' height='28' pack="end" align="center">
+            	<vbox id= "NortonBox" pack="center" align="center" width='60' height='28'>
+                	<image id="NORTONSECUREimage" width='56' height='27' tooltiptext="Verisign Security Service Trustmark, Click me !"/>
+            	</vbox>
+            	<vbox id= "McafeeBox" pack="center" align="center" width='60' height='28'>
+                	<image id="McAfeeSecureimage" width='56' height='25' tooltiptext="Vulnerability/Malware Scanning Trustmark, Click me !"/>
+                	<hbox width='56' height='3' pack="center">
+                	<label id= "McAfeeSecureimageLabel" width='25' height='3' style="font-size:8px;"/>
+                	<label id= "McAfeeSecureimageDate" width='25' height='3' style="font-size:8px;"/>
+                	</hbox>
+            	</vbox>
+            	<vbox id= "TrusteBox" pack="center" align="center" width='60' height='28'  >
+                	<image id="TRUSTeimage" width='56' height='27' tooltiptext="Privacy Protection Trustmark, Click me !"/>
+            	</vbox> 
+            	
+        		
+        		
+        	</hbox>
+        	
+        </toolbaritem>
+        
+      <spacer flex="1" />
+        
+   </toolbar>
+</toolbox>
+
+
+
+<popupset type="panel" >
+	<panel id="clickNotifyPopupTrustmark" class="NotificationPanel" type="arrow" fade="slow">
+    	<vbox align="center" style="-moz-appearance: none !important; background-color:transparent !important;">
+    	<description class="popupNotificationText" value="Click to verify the Trsutmarks !" />
+    	<description id="clickNotifyPopupTrustmarkHowToVerify" value="How To Verify Trustmarks ?" class="NotificationPanelLink" onclick="objwsldfirefox.openHowToVerify();"/>
+    	</vbox>
+	</panel>
+</popupset>
+
+
+<popupset label="WSLDetails" type="panel">
+    <panel id="WSLDPopup" backdrag="true" type="arrow">
+      <vbox id="WSLDPopupContainer" minwidth="660" >
+      
+        <hbox>
+        
+        	<hbox flex="0" style="padding: 4px;">
+        		<hbox width="150"/>
+        	</hbox>
+        	<hbox pack="center" flex="2" style="padding: 4px;">
+        		<label id="WSLDPopupTitle" value="Website Security Details" />
+        	</hbox>
+        	
+        	<hbox pack="end" flex="0" style="padding: 4px;">
+        		<toolbarbutton id="WSLDFirefoxViewPageInfoButton" class="SecurityPageInfoButton" label="Security Page Info" width="150" height= '28' tooltiptext="View Detailed Security Page Info" 
+            				oncommand="objwsldfirefox.PageInfoDialog();">
+            				    
+           		</toolbarbutton>
+        	</hbox>
+          
+        </hbox>
+        
+      		<groupbox id="WSLDPopupBoxGeneral" class="PanelBox" minwidth="650" align="left"> 
+      			<caption id="WSLDPopupGeneral" class = "WSLDPanelLabelGeneral" > <image src="chrome://wsldfirefox/skin/generalinfo.png" width="16" height="16"/> 
+      			General Info</caption>
+      			<hbox width="650" >
+      				<vbox width="150">
+      					<label value= "Host Name:" class = "WSLDPanelLabel" />
+      					<label value= "Total Score:" class = "WSLDPanelLabel" />
+      					<label value= "Score Meaning:" class = "WSLDPanelLabel" />
+      					<description value=""/>
+      					<label value= "Trustmark Info:" class = "WSLDPanelLabel" />
+      					<description value=""/>
+      					<description value=""/>
+      				</vbox>
+      				
+      				<vbox minwidth="500">
+      					<description id="WSLDPopupGeneralHostName" />
+      					<description id="WSLDPopupGeneralTotalScore"/>
+      					<description id="WSLDPopupGeneralTotalScoreMeaning"/>
+      					<description id="WSLDPopupGeneralTotalScoreMeaning2"/>
+      					<hbox minwidth="500" pack="start">
+      						<description id="WSLDPopupGeneralTrustmarkAvailabilityBegin" />
+      						<description id="WSLDPopupGeneralTrustmarkAvailabilityNorton" class="NotificationPanelLink" onclick="objwsldfirefox.openNortonSECURED();"/>
+      						<description id="WSLDPopupGeneralTrustmarkAvailabilityAndComma" />
+      						<description id="WSLDPopupGeneralTrustmarkAvailabilityMcAfee" class="NotificationPanelLink" onclick="objwsldfirefox.openMcAfeeSECURE();"/>
+      						<description id="WSLDPopupGeneralTrustmarkAvailabilityAnd" />
+      						<description id="WSLDPopupGeneralTrustmarkAvailabilityTRUSTe" class="NotificationPanelLink" onclick="objwsldfirefox.openTRUSTe();"/>
+      						<description id="WSLDPopupGeneralTrustmarkAvailabilityEnd" />
+      					</hbox>
+      					<description id="WSLDPopupGeneralTrustmarkMeaning1"/>
+      					<hbox minwidth="500" >
+      					<description id="WSLDPopupGeneralTrustmarkMeaning2"/> 
+      					<description id="WSLDPopupGeneralTrustmarkMeaning3" class="NotificationPanelLink" onclick="objwsldfirefox.openHowToVerify();"/>
+      					</hbox>
+      				</vbox>
+      			</hbox>
+
+   	  		</groupbox>
+   	  
+   	  		<separator/>
+   	  		
+   	  		<groupbox id="WSLDPopupBoxDetails" class="PanelBox" minwidth="650" >
+   	  			<caption id="WSLDPopupSSLStrengthDetails" class = "WSLDPanelLabelGeneral" label="SSL Connection Details"/>
+   	  			
+   	   				<hbox width="650">
+   	   					<vbox width="600" />
+   	   					<vbox width="50" align="right">
+   	   						<label value= "Score" class = "WSLDPanelScore" style="text-decoration: underline;"/>
+   	   					</vbox>
+   	   				</hbox>
+   	   				
+   	   				<hbox width="650">
+   	   					<vbox width="150">
+   	   						<label value= "SSL Implemented? :" class = "WSLDPanelLabel"/>
+   	   					</vbox>
+   	   					
+   	   					<vbox width="450">
+   	   						<description id="WSLDPopupCertificateAvailability"/>
+   	   					</vbox>
+   	   					
+   	   					<vbox width="50" align="right">
+   	   						<description id="WSLDPopupCertificateAvailabilityScore" class = "WSLDPanelScore"/>
+   	   					</vbox>
+   	   				</hbox>
+   	   				
+   	  				<groupbox id="WSLDPopupBoxDetailsCertificate" class="PanelBox" minwidth="650">
+      					<caption id="WSLDPopupCertificate" class = "WSLDPanelLabelSpecific"> <image src="chrome://wsldfirefox/skin/certificate.png" width="16" height="16"/> 
+      					Certificate</caption>
+      					
+      					<hbox width="650">
+      						<vbox width="150">
+   	  							<label value= "Common Name:" class = "WSLDPanelLabel"/>
+   	  							<label value= "Certificate Validation:" class = "WSLDPanelLabel"/>
+   	  							<separator/>
+   	  						</vbox>
+      						
+      						<vbox width="450"> 
+      							<hbox>
+   	  							<description id="WSLDPopupCertificateCommonName" width="250"/>
+   	  							<description id="WSLDPopupCertificateCommonNameDomainMisMatch" width="200"/>
+   	  							</hbox>
+   	  							<description id="WSLDPopupCertificateValidation" />
+   	  							<description id="WSLDPopupCertificateValidation2" />
+   	  						</vbox>
+   	  						
+   	  						<vbox width="50" align="right">
+   	  							<description id="WSLDPopupCertificateCommonNameScore" class = "WSLDPanelScore"/>
+   	  							<separator/>
+   	  							<description id="WSLDPopupCertificateValidationScore" class = "WSLDPanelScore"/>
+   	  						</vbox>
+   	  					</hbox>
+   	  				</groupbox>
+   	  				
+   	  				<groupbox id="WSLDPopupBoxDetailsKeyExchange" class="PanelBox" minwidth="650">
+      					<caption id="WSLDPopupKeyExchange" class = "WSLDPanelLabelSpecific"> <image src="chrome://wsldfirefox/skin/exchange.png" width="16" height="16"/> 
+      					Key Exchange</caption>
+      					
+      					<hbox width="650">
+      						<vbox width="150">
+   	  							<label value= "Private Key Length:" class = "WSLDPanelLabel"/>
+   	  							<label value= "Perfect Forward Secracy: " class = "WSLDPanelLabel"/>
+   	  						</vbox>
+      					
+      						<vbox width="450">
+      							<description id="WSLDPopupKeyExchangePrivateKey"/>
+   	  							<description id="WSLDPopupKeyExchangePFS"/>
+   	  						</vbox>
+   	  						
+   	  						<vbox width="50" align="right">
+   	  							<description id="WSLDPopupKeyExchangePrivateKeyScore" class = "WSLDPanelScore"/>
+   	  							<description id="WSLDPopupKeyExchangePFSScore" class = "WSLDPanelScore"/>
+   	  						</vbox>
+   	  					</hbox>
+   	  					
+   	  				</groupbox>
+   	  				
+   	  				<groupbox id="WSLDPopupBoxDetailsEncryptionKey" class="PanelBox" minwidth="650">
+      					<caption id="WSLDPopupEncryptionKey" class = "WSLDPanelLabelSpecific"> <image src="chrome://wsldfirefox/skin/key.png" width="16" height= "16"/> 
+      					Cipher Strength</caption>
+      					
+      					<hbox width="650">
+      						<vbox width="150">
+   	  							<label value= "Encryption Key Length: " class = "WSLDPanelLabel"/>
+   	  						</vbox>
+      					
+      						<vbox width="450">
+   	  							<description id="WSLDPopupEncryptionKeyLength"/>
+   	  						</vbox>
+   	  						
+   	  						<vbox width="50" align="right">
+   	  							<description id="WSLDPopupEncryptionKeyLengthScore" class = "WSLDPanelScore"/>
+   	  						</vbox>
+   	  					</hbox>
+      					
+   	  				</groupbox>
+   	  
+			</groupbox>
+			
+   	  		
+      </vbox>
+    </panel>
+  </popupset>
+
+</overlay>

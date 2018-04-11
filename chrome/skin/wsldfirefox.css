@@ -1,0 +1,293 @@
+
+#WSLDFirefoxResizeSplitter {
+    background: transparent;
+    border: none !important;
+}
+
+#Title {
+    list-style-image: url("chrome://wsldfirefox/skin/wsldfirefoxlabel.gif");
+}
+
+#Title:hover {
+    -moz-appearance: none !important;
+    cursor:pointer;
+	background-color:#f1f1f1;
+}
+
+#organization {
+	-moz-appearance: none !important;
+	font-size:12px;
+	color: #59BA29;
+	font-family:lucida sans unicode, lucida grande, sans-serif;
+}
+
+
+
+.strengthLabel {
+	-moz-appearance: none !important;
+	font-size:10px;
+	font-weight: bold;
+	color: #2B53F0;
+	font-family:lucida sans unicode, lucida grande, sans-serif;
+}
+
+.popupNotificationText {
+	-moz-appearance: none !important;
+	font-size:14px;
+	font-weight: bold;
+	color: #2B53F0;
+	font-family:lucida sans unicode, lucida grande, sans-serif;
+}
+
+.NotificationPanel {
+	-moz-appearance: none !important;
+	background-color:transparent !important;
+	/*opacity: 0.8;*/
+	border:none !important;
+}
+
+.NotificationPanelLink {
+	-moz-appearance: none !important;
+	color: #2B53F0;
+	font-family:lucida sans unicode, lucida grande, sans-serif;
+	cursor:pointer;
+	text-decoration: underline;
+}
+
+.NotificationPanelLink:hover {
+	-moz-appearance: none !important;
+	color: #000cb3;
+}
+
+.WSLDPanelLabel{
+	-moz-appearance: none !important;
+	font-size:13px;
+	font-style:italic;
+}
+
+.WSLDPanelScore {
+	-moz-appearance: none !important;
+	font-weight:bold;
+}
+
+.WSLDPanelLabelGeneral {
+	-moz-appearance: none !important;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.WSLDPanelLabelSpecific {
+	-moz-appearance: none !important;
+	font-weight:bold;
+	
+}
+
+/* I could find the class in the XUL file. Check more !*/
+.progressDescription {
+	-moz-appearance: none !important;
+	font-weight:bold; color: #2B53F0; align:right; margin-top: 2px; align-right: 2px !important; 
+}
+
+#WSLDFirefoxProgressmeter{
+-moz-appearance: none !important;
+display:visible;
+
+border: 1px #aaa double;
+padding: 1px;
+background-color: whiteSmoke;
+border-radius: 3px;
+/*border: solid thin rgba(200,200,200, 0.4) !important;*/
+/*opacity: 0.7 !important;*/
+/*color: #FF0000 !important ;*/
+/*background: #FF0000 !important ;*/
+/*background: linear-gradient(to right, white, black 50%, white 52%, black 75%, white 77%);*/
+/*background-color: transparent !important;*/
+}
+
+/* Progress Results with 50% penalty for mixed content*/
+#WSLDFirefoxProgressmeter[value = "10"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "12"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "13"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "14"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "16"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "17"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "18"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "19"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "20"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "21"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "22"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "23"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "24"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "25"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "26"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "27"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "28"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "29"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "30"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "31"] > .progress-bar {
+	-moz-appearance: none !important;
+	background: #ff0000;
+  	/*background-color: #2B53F0 !important;*/
+}
+#WSLDFirefoxProgressmeter[value = "32"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "33"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "34"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "35"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "36"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "37"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "38"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "39"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "40"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "41"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "42"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "43"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "44"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "45"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "46"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "47"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "48"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "49"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "50"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "51"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "52"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "53"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "54"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "55"] > .progress-bar {
+	-moz-appearance: none !important;
+	background: #eb8f05;
+  	/*background-color: #2B53F0 !important;*/
+}
+
+/*Progress result without 50% penalty*/
+#WSLDFirefoxProgressmeter[value = "56"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "57"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "58"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "59"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "60"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "61"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "62"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "63"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "64"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "65"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "66"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "67"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "68"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "69"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "70"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "71"] > .progress-bar {
+	-moz-appearance: none !important;
+	background: #0788eb;
+  	/*background-color: #2B53F0 !important;*/
+}
+#WSLDFirefoxProgressmeter[value = "72"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "73"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "74"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "75"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "76"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "77"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "78"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "79"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "80"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "81"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "82"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "83"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "84"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "85"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "86"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "87"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "88"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "89"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "90"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "91"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "92"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "93"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "94"] > .progress-bar,
+#WSLDFirefoxProgressmeter[value = "95"] > .progress-bar {
+	-moz-appearance: none !important;
+	background: #0b8000;
+  	/*background-color: #2B53F0 !important;*/
+}
+
+
+.SecurityDetailButton{
+	-moz-appearance: none !important;
+	cursor:pointer;
+	
+  	
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:-moz-linear-gradient( center top, #ebebeb 5%, #e0e0e0 100% );
+	background-color:#ebebeb;
+	border-top-left-radius:12px;
+	border-top-right-radius:12px;
+	border-bottom-right-radius:12px;
+	border-bottom-left-radius:12px;
+	border:1px solid #d1d1d1;
+	display:inline-block;
+	color:#2B53F0;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	height:30px;
+	line-height:30px;
+	width:120px;
+	text-align:center;
+  }
+
+.SecurityDetailButton:hover{
+	-moz-appearance: none !important;
+	background:-moz-linear-gradient( center top, #e0e0e0 5%, #ebebeb 100% );
+	background-color:#e0e0e0;
+  }
+
+.SecurityDetailButton:active {
+	-moz-appearance: none !important;
+	position:relative;
+	top:1px;
+}
+
+
+.SecurityPageInfoButton{
+	-moz-appearance: none !important;
+	cursor:pointer;
+	
+  	
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:-moz-linear-gradient( center top, #f2f2f2 5%, #ebebeb 100% );
+	background-color:#f2f2f2;
+	border-top-left-radius:12px;
+	border-top-right-radius:12px;
+	border-bottom-right-radius:12px;
+	border-bottom-left-radius:12px;
+	border:1px solid #e8e5e8;
+	display:inline-block;
+	/*color:#777777;*/
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	height:30px;
+	line-height:30px;
+	width:120px;
+	text-align:center;
+  }
+
+.SecurityPageInfoButton:hover{
+	-moz-appearance: none !important;
+	background:-moz-linear-gradient( center top, #ebebeb 5%, #f2f2f2 100% );
+	background-color:#ebebeb;
+  }
+
+.SecurityPageInfoButton:active {
+	-moz-appearance: none !important;
+	position:relative;
+	top:1px;
+}
+
+	
+#WSLDPopupTitle {
+	-moz-appearance: none !important;
+	font-size:20px;
+	font-weight:bold;
+}
+
+
+
